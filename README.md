@@ -4,10 +4,12 @@
 
 Application for stock portfolio management, analysis and prediction.
 
-## Development
+## Prerequisites
 
-* Create a python 3 venv.
-* Install npm.
+* python 3
+* npm
+
+## Setup
 
 ```bash
 # python3 -m venv venv3
@@ -15,5 +17,17 @@ Application for stock portfolio management, analysis and prediction.
 
 # pip install  -r requirements.txt  # For API backend
 # npm install                       # For web frontend
-# ./run.py                          # Start dev environment
+
+```
+
+## Development
+
+```bash
+# ./run.py
+```
+
+## Deployment
+
+```bash
+# ./run.py
 ```

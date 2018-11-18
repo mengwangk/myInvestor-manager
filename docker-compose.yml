@@ -5,7 +5,7 @@ services:
     image: postgres
   web:
     build: .
-    command: python3 manage.py runserver 0.0.0.0:8000
+    command: FLASK_APP=manage.py flask run
     volumes:
       - .:/code
     ports:

@@ -5,10 +5,12 @@ services:
     image: postgres
   web:
     build: .
-    command: FLASK_APP=manage.py flask run
+    environment:
+      - FLASK_APP=manage.py
+    command: flask run
     volumes:
       - .:/code
     ports:
-      - "8000:8000"
+      - "5000:5000"
     depends_on:
       - db

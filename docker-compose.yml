@@ -2,8 +2,8 @@ version: '3'
 
 networks:
   dev_network:
-    driver: s
-    ss
+    driver: bridge
+    
 services:
   db:
     image: postgres

@@ -6,15 +6,28 @@ networks:
     
 services:
   db:
+    networks:
+      - dev_network
     image: postgres
-  web:
+    env_file:
+      - .env
+    expose:
+      - 5432
+
+  app:
+    networks:
+      - dev_network
     build: .
-    environment:
-      - FLASK_APP=manage.py
-    command: flask run --host=0.0.0.0
+    env_file:
+      - .env
+    #environment:
+    #  - FLASK_APP=manage.py
+    command: flask run --host=0.0.0.0 -p 5000 --reload --debugger
     volumes:
       - .:/code
+    expose:
+      - 5000
     ports:
-      - "5000:5000"
+      - 5000:5000
     depends_on:
       - db

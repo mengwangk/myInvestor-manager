@@ -7,16 +7,13 @@ Application for stock portfolio management, analysis and prediction.
 ## Prerequisites
 
 * python 3
-* npm
+* Docker
 
 ## Setup
 
 ```bash
-# python3 -m venv venv3
-# source venv3/bin/activate
 
-# pip install  -r requirements.txt  # For API backend
-# npm install                       # For web frontend
+docker-compose up --build -d
 
 ```
 
@@ -31,3 +28,8 @@ Application for stock portfolio management, analysis and prediction.
 ```bash
 # ./run.py
 ```
+
+
+## References
+
+* [Debugging a Python Flask app in Docker Compose](https://github.com/trstringer/python-flask-docker-compose-debugging)

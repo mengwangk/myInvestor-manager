@@ -9,7 +9,9 @@ Application for stock portfolio management, analysis and prediction.
 * python 3
 * Docker
 
-## Setup
+## Development
+
+Start the docker instances
 
 ```bash
 
@@ -17,16 +19,13 @@ docker-compose up --build -d
 
 ```
 
-## Development
+Connect to postgresql instance
 
 ```bash
-# ./run.py
-```
 
-## Deployment
+docker run -it --rm --network dev_network postgres psql -h postgres -U postgres
 
-```bash
-# ./run.py
+
 ```
 
 

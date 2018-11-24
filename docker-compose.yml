@@ -11,8 +11,8 @@ services:
     image: postgres
     env_file:
       - .env
-    expose:
-      - 5432
+    ports:
+      - 5432:5432
 
   app:
     networks:
@@ -20,13 +20,9 @@ services:
     build: .
     env_file:
       - .env
-    #environment:
-    #  - FLASK_APP=manage.py
     command: flask run --host=0.0.0.0 -p 5000 --reload --debugger
     volumes:
       - .:/code
-    expose:
-      - 5000
     ports:
       - 5000:5000
     depends_on:

@@ -1,4 +1,6 @@
-Flask
+flask
+requests
+flask-sqlalchemy
 psycopg2
 python-dotenv
 coverage

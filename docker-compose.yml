@@ -6,6 +6,7 @@ networks:
     
 services:
   db:
+    restart: always
     networks:
       - dev_network
     image: postgres
@@ -15,6 +16,7 @@ services:
       - 5432:5432
 
   app:
+    restart: always
     networks:
       - dev_network
     build: .

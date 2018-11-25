@@ -8,3 +8,5 @@ node_modules
 .idea/*
 *.pyc
 tmp
+postgres-data/
+.DS_Store

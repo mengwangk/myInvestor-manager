@@ -18,3 +18,4 @@ from sqlalchemy_utils import create_database, database_exists
 
 # postgresql://myinvestor:Money123$@postgres:5432/myinvestordb
 
+

@@ -3,6 +3,7 @@ FROM python:latest
 LABEL maintainer "Koh Meng Wang <mengwangk@gmail.com>"
 
 ENV PYTHONUNBUFFERED 1
+ENV FLASK_ENV=docker
 
 COPY Pipfile Pipfile.lock ./
 

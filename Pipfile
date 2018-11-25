@@ -5,8 +5,22 @@ name = "pypi"
 
 [packages]
 requests = "*"
+flask = "*"
+flask-migrate = "*"
+flask-script = "*"
+flask-sqlalchemy = "*"
+gunicorn = "*"
+sqlalchemy = "*"
+flask-cors = "*"
+sqlalchemy-utils = "*"
+"psycopg2" = "*"
+testing-postgresql = "*"
 
 [dev-packages]
+pylint = "*"
+mypi = "*"
+pytest = "*"
+black = "==18.9b0"
 
 [requires]
 python_version = "3.7"

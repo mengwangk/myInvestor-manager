@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 
 networks:
   dev_network:
@@ -6,26 +6,38 @@ networks:
     
 services:
   db:
+    container_name: postgres
     restart: always
     networks:
       - dev_network
     image: postgres
     env_file:
       - .env
+    volumes:
+      - app-db:/var/lib/postgresql/data
     ports:
       - 5432:5432
 
   app:
+    container_name: app
     restart: always
     networks:
       - dev_network
-    build: .
+    build: 
+      context: .
+      dockerfile: Dockerfile_dev
     env_file:
       - .env
     command: flask run --host=0.0.0.0 -p 5000 --reload --debugger
     volumes:
-      - .:/code
+      - .:/app
     ports:
       - 5000:5000
     depends_on:
       - db
+    # entrypoint:
+    #  - /app/docker_script.sh
+
+volumes:
+  app-db:
+    name: app-db

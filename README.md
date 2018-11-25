@@ -23,11 +23,9 @@ Connect to postgresql instance
 
 ```bash
 
-docker run -it --rm --network dev_network postgres psql -h postgres -U postgres
-
+docker run -it --rm --network myinvestor-manager_dev_network --link db:postgres postgres psql -h postgres -d myinvestordb  -U myinvestor
 
 ```
-
 
 ## References
 

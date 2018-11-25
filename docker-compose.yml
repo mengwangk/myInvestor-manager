@@ -6,7 +6,7 @@ networks:
     
 services:
   db:
-    container_name: postgres
+    container_name: db
     restart: always
     networks:
       - dev_network

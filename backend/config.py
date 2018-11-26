@@ -5,7 +5,19 @@
 # Configurations for dev and prod. 
 #
 ###############################################################################
-from __future__ import (absolute_import, division, print_function,
-                        unicode_literals)
-class Config:
+
+import os
+
+class Config(object):
     LOG_FILE = 'myinvestor.log'
+
+class ProductionConfig(Config):
+    DATABASE_URI = os.environ.get("DATABASE_URL")
+    DEBUG = False
+
+
+class DockerDevConfig(Config):
+    DATABASE_URI =  os.environ.get("DATABASE_URL")
+    DEBUG = True
+
+config = {"production": ProductionConfig, "development": DockerDevConfig}

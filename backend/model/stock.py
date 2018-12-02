@@ -2,16 +2,14 @@
 # -*- coding: utf-8; py-indent-offset:4 -*-
 ###############################################################################
 #
-# Database models.
+# Stock model class.
 #
 ###############################################################################
 
-from .Email import Email
-from .Person import Person
-from .base import db
-
-__all__ = ["db"]
-
-# You must import all of the new models you create to this page
+class Stock(Mixin, db.Model):
+    """
+    Stock table.
+    """
+    __tablename = "stock"
 
 

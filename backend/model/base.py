@@ -2,16 +2,12 @@
 # -*- coding: utf-8; py-indent-offset:4 -*-
 ###############################################################################
 #
-# Database models.
+# Database initialization.
 #
 ###############################################################################
 
-from .Email import Email
-from .Person import Person
-from .base import db
 
-__all__ = ["db"]
+from flask_sqlalchemy import SQLAlchemy
 
-# You must import all of the new models you create to this page
-
-
+# instantiate database object
+db = SQLAlchemy()

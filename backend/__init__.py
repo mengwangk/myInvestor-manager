@@ -7,14 +7,12 @@
 ###############################################################################
 
 import os
-import logging
 
-from flask import Flask, request
+from flask import Flask
 from flask_cors import CORS
 
 from backend.api import main
 from backend.config import config
-import pprint
 
 
 def create_app(test_config=None):
@@ -22,7 +20,7 @@ def create_app(test_config=None):
     Flask application factories - http://flask.pocoo.org/docs/1.0/patterns/appfactories/
 
     :param test_config: Test configuration file.
-    ;:return app: Flask app object.
+    :return app: Flask app object.
     """
 
     # Environment variable to configure the config to use

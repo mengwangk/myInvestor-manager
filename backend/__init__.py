@@ -45,8 +45,8 @@ def create_app(test_config=None):
     else:
         app.config.from_object(config[env])
 
-    #pp = pprint.PrettyPrinter(indent=4)
-    #pp.pprint(app.config)
+    # pp = pprint.PrettyPrinter(indent=4)
+    # pp.pprint(app.config)
 
     # import and register blueprints
     app.register_blueprint(main)
@@ -55,4 +55,3 @@ def create_app(test_config=None):
 
 
 app = create_app()
-

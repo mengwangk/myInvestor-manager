@@ -16,6 +16,7 @@ sqlalchemy-utils = "*"
 "psycopg2" = "*"
 testing-postgresql = "*"
 python-dotenv = "*"
+connexion = "*"
 
 [dev-packages]
 pylint = "*"

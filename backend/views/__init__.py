@@ -6,9 +6,9 @@
 #
 ###############################################################################
 
-from flask import Blueprint, current_app
+from flask import Blueprint, current_app, render_template
 
-views = Blueprint("views", __name__)  # initialize blueprint
+views = Blueprint("views", __name__, template_folder="./")  # initialize blueprint
 
 @views.route("/")
 def index():
@@ -18,4 +18,4 @@ def index():
     :return: Default response
     """
 
-    return "hello"
+    render_template("index.html")

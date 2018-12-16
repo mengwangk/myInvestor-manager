@@ -27,7 +27,12 @@ def create_app(test_config=None):
     # Environment variable to configure the config to use
     _FLASK_ENV_ = 'FLASK_ENV'
 
-    app = Flask(__name__)
+    # app = Flask(__name__)
+    app = connexion.App(__name__, specification_dir='./')
+
+    # Read the swagger.yml file to configure the endpoints
+    app.add_api('swagger.yml')
+
 
     # Add CORS
     CORS(app)

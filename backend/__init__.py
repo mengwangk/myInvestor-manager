@@ -15,7 +15,6 @@ from flask_cors import CORS
 from backend.api import main
 from backend.config import config
 
-
 def create_app(test_config=None):
     """
     Flask application factories - http://flask.pocoo.org/docs/1.0/patterns/appfactories/

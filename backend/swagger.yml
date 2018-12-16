@@ -14,7 +14,7 @@ basePath: "/api"
 paths:
   /people:
     get:
-      operationId: "people.read"
+      operationId: "backend.api.people.read"
       tags:
         - "People"
       summary: "The people data structure supported by the server application"

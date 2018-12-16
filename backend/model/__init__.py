@@ -6,8 +6,6 @@
 #
 ###############################################################################
 
-from .Email import Email
-from .Person import Person
 from .base import db
 
 __all__ = ["db"]

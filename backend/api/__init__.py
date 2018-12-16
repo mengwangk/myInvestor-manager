@@ -7,6 +7,7 @@
 ###############################################################################
 
 from flask import Blueprint, current_app
+from .people import *
 
 # import pprint
 

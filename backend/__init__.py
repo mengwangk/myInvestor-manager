@@ -27,14 +27,14 @@ def create_app(test_config=None):
     _FLASK_ENV_ = 'FLASK_ENV'
 
     # app = Flask(__name__)
-    app = connexion.App(__name__, specification_dir='./')
+    connexionApp = connexion.App(__name__, specification_dir='./')
 
     # Read the swagger.yml file to configure the endpoints
-    app.add_api('swagger.yml')
+    connexionApp.add_api('swagger.yml')
 
 
     # Add CORS
-    CORS(app)
+    CORS(connexionApp.app)
 
     # check environment variables to see which config to load
     env = os.environ.get(_FLASK_ENV_, "docker")
@@ -46,17 +46,17 @@ def create_app(test_config=None):
         # in a separate configuration although I would recommend
         # adding/changing it in api/config.py instead
         # ignore environment variable config if config was given
-        app.config.from_mapping(**test_config)
+        connexionApp.app.config.from_mapping(**test_config)
     else:
-        app.config.from_object(config[env])
+        connexionApp.app.config.from_object(config[env])
 
     # pp = pprint.PrettyPrinter(indent=4)
     # pp.pprint(app.config)
 
     # import and register blueprints
-    app.register_blueprint(main)
+    connexionApp.app.register_blueprint(main)
 
-    return app
+    return connexionApp.app
 
 
 app = create_app()

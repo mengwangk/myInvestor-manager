@@ -13,10 +13,11 @@ gunicorn = "*"
 sqlalchemy = "*"
 flask-cors = "*"
 sqlalchemy-utils = "*"
-"psycopg2" = "*"
 testing-postgresql = "*"
 python-dotenv = "*"
-connexion = "*"
+connexion = {extras = ["swagger-ui"], version = "*"}
+"psycopg2" = "*"
+swagger-ui-bundle = "*"
 
 [dev-packages]
 pylint = "*"

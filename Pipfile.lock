@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8b458befd7518c91a37e5de123538bfc70e2365211f66b42e4f3e20452a2e7b1"
+            "sha256": "bf270a368837674c766ef1f0a41ebe147be791b518ab87f5587e024c61a6086e"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -51,6 +51,9 @@
             "version": "==1.2.2"
         },
         "connexion": {
+            "extras": [
+                "swagger-ui"
+            ],
             "hashes": [
                 "sha256:54bc34fae9d3bdb60b138776e3affc5d4ac20ab799cd0881dbf9ef48b33fef88",
                 "sha256:6f0169cc91ff389be628807c751ddd4d8ba79a594a7272c9d7663d243795b323"
@@ -294,6 +297,15 @@
             ],
             "index": "pypi",
             "version": "==0.33.9"
+        },
+        "swagger-ui-bundle": {
+            "hashes": [
+                "sha256:98a418585f62e5e1193cb0f8000292bcb01e6a33bc39e5ba95b642172ef2664e",
+                "sha256:dfb9522f9b501db042358b3f6e86b644cc5dd083e162d9b77c7e6b64aeb9a8fe",
+                "sha256:e23abfae8fd775428a5b0e61214a04646299c61e31d1e46536448a3a04400cb6"
+            ],
+            "index": "pypi",
+            "version": "==0.0.2"
         },
         "testing-postgresql": {
             "hashes": [

@@ -12,6 +12,7 @@ RUN pipenv install --system
 
 RUN mkdir /app
 COPY . /app
+
 WORKDIR /app
 
 EXPOSE 5000

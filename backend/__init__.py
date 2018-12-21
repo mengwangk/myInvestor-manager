@@ -7,13 +7,20 @@
 ###############################################################################
 
 import os
+import logging
 import connexion
 
-from flask import Flask
+from flask import Flask, request
 from flask_cors import CORS
 
 from backend.api import main
 from backend.config import config
+
+class RequestFormatter(logging.Formatter):
+    def format(self, record):
+        record.url = request.url
+        record.remote_addr = request.remote_addr
+        return super().format(record)
 
 def create_app(test_config=None):
     """
@@ -48,6 +55,11 @@ def create_app(test_config=None):
         connexionApp.app.config.from_mapping(**test_config)
     else:
         connexionApp.app.config.from_object(config[env])
+
+    # logging format
+    formatter = RequestFormatter(
+        "%(asctime)s %(remote_addr)s: requested %(url)s: %(levelname)s in [%(module)s: %(lineno)d]: %(message)s"
+    )
 
     # pp = pprint.PrettyPrinter(indent=4)
     # pp.pprint(app.config)

@@ -7,6 +7,7 @@
 ###############################################################################
 
 import os
+import logging
 
 class Config(object):
     LOG_FILE = 'myinvestor.log'
@@ -17,6 +18,7 @@ class ProductionConfig(Config):
     """
     DATABASE_URI = os.environ.get("DATABASE_URL")
     DEBUG = False
+    LOG_LEVEL = logging.ERROR
 
 
 class DockerDevConfig(Config):
@@ -25,6 +27,7 @@ class DockerDevConfig(Config):
     """
     DATABASE_URI =  os.environ.get("DATABASE_URL")
     DEBUG = True
+    LOG_LEVEL = logging.DEBUG
 
 # Config map
 config = {"production": ProductionConfig, "development": DockerDevConfig}
